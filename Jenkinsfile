@@ -7,7 +7,6 @@ pipeline {
         stage ("Maven build") {
             steps {
                 echo "======== maven build ========"
-                sh "mvn dependency::tree"
                 sh "mvn clean package -X"
             }
         }
