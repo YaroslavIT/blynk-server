@@ -7,7 +7,7 @@ pipeline {
         stage ("Maven build") {
             steps {
                 echo "======== maven build ========"
-                sh "mvn clean package -X"
+                sh "mvn clean package"
             }
         }
     }
