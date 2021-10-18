@@ -11,12 +11,12 @@ pipeline {
         NEXUS_CREDENTIAL_ID = "maven_nexus_credentials"
     }
     stages {
-        stage ("Maven build") {
+        /* stage ("Maven build") {
             steps {
                 echo "======== maven build ========"
                 sh "mvn -DskipTests=true clean package"
             }
-        }
+        } */
         stage("Publish to Nexus") {
             steps {
                 script {
