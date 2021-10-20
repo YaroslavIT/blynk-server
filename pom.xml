@@ -22,20 +22,6 @@
     <version>0.41.17-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <scm>
-        <url>https://github.com/YaroslavIT/blynk-server.git</url>
-        <connection>scm:git:ssh://git@github.com/YaroslavIT/blynk-server.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/YaroslavIT/blynk-server.git</developerConnection>
-        <tag>v0.41.2-SNAPSHOT</tag>
-    </scm>
-
-    <developers>
-        <developer>
-            <id>Dmitriy Dumanskiy</id>
-            <email>dmitriy@blynk.cc</email>
-        </developer>
-    </developers>
-
     <modules>
         <module>server</module>
         <module>client</module>
@@ -44,20 +30,12 @@
 
     <!-- for QR gen tool -->
     <distributionManagement>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://192.168.11.100:8081/repository/maven-snapshots/</url>
             <layout>default</layout>
-        </repository>
+        </snapshotRepository>
     </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
 
     <profiles>
         <profile>
@@ -95,11 +73,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                    <release>11</release>
-                </configuration>
             </plugin>
 
             <plugin>
