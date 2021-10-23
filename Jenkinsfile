@@ -67,8 +67,8 @@ pipeline {
                         error "*** File: ${artifactPath}, could not be found";
                     }
                 }
+                */
             } 
-            */
         }
     }
 }
