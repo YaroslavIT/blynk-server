@@ -20,6 +20,22 @@ pipeline {
         stage("Publish to Nexus") {
             steps {
                 script {
+                    nexusArtifactUploader artifacts: [
+                        [
+                            artifactId: 'blynk', 
+                            classifier: '', 
+                            file: 'target/blynk-0.41.17.jar', 
+                            type: 'jar'
+                        ]
+                    ], 
+                    credentialsId: 'maven_nexus_credentials', 
+                    groupId: 'cc.blynk', 
+                    nexusUrl: '192.168.11.100:8081', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http', repository: 'blynk-server-release', version: '0.41.17'
+                    
+                    
+                    /*
                     pom = readMavenPom file: "pom.xml"
                     echo "${pom}"
                     filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
@@ -51,6 +67,7 @@ pipeline {
                         error "*** File: ${artifactPath}, could not be found";
                     }
                 }
+                */
             }
         }
     }
