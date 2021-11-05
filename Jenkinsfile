@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "======== MAVEN BUILD ========"
                 /*sh "mvn -DskipTests=true clean package" */
-                sh "mvn -DskipTests=true clean compile"
+                sh "mvn clean package -DskipTests"
             }
         }
         stage ("Docker build") {
