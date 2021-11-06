@@ -16,7 +16,14 @@
         <system>github</system>
         <url>https://github.com/YaroslavIT/blynk-server.git/issues</url>
     </issueManagement>
-
+    
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+    
     <groupId>cc.blynk</groupId>
     <artifactId>blynk</artifactId>
     <version>0.41.17-SNAPSHOT</version>
