@@ -16,7 +16,7 @@ pipeline {
                 echo "======== DOCKER BUILD ========"
                 sh "cp /var/lib/jenkins/workspace/Blynk-server/server/launcher/target/server-*.jar /home/yaroslav/Docker"
                 sh "cd /home/yaroslav/Docker"
-                sh "docker build -t blynk-server ."
+                sh "docker build -t -f /home/yaroslav/Docker/Dockerfile blynk-server ."
                 
             }
         }
