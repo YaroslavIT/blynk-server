@@ -1,5 +1,5 @@
-FROM ubuntu
-MAINTAINER Florian Mauduit <f@lf.je>
+FROM openjdk:11
+#MAINTAINER Florian Mauduit <f@lf.je>
 
 #############################################################
 #
@@ -14,7 +14,7 @@ MAINTAINER Florian Mauduit <f@lf.je>
 ###
 
 ## Server Port
-ENV BLYNK_SERVER_VERSION 0.41.16
+ENV BLYNK_SERVER_VERSION 0.41.17-SNAPSHOT
 ENV HARDWARE_MQTT_PORT 8440
 ENV HTTP_PORT 8080
 ENV HTTPS_PORT 9443
@@ -63,21 +63,23 @@ ENV ENABLE_DB false
 ENV ENABLE_RAW_DB_DATA_STORE false
 
 ## Users
-ENV INITIAL_ENERGY 100000
+ENV INITIAL_ENERGY 9999999
 ENV ADMIN_EMAIL admin@blynk.cc
 ENV ADMIN_PASS admin
 
 
 ############################################################
 # Install OpenJDK
-RUN apt update && apt install -y openjdk-11-jdk libxrender1 maven
-RUN apt install -y curl
-
+# RUN apt update 
+# && apt install -y openjdk-11-jdk libxrender1 maven
+# RUN apt install -y curl
 
 ############################################################
 
 RUN mkdir /blynk
-RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
+ADD /home/yaroslav/Docker/server-${BLYNK_SERVER_VERSION}.jar blynk
+#RUN curl -L server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
+
 
 RUN mkdir /data
 RUN mkdir /config && touch /config/server.properties
