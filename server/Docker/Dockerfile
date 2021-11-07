@@ -77,7 +77,7 @@ ENV ADMIN_PASS admin
 ############################################################
 
 RUN mkdir /blynk
-ADD /home/yaroslav/Docker/server-${BLYNK_SERVER_VERSION}.jar blynk
+ADD ./server/launcher/target/server-${BLYNK_SERVER_VERSION}.jar blynk
 #RUN curl -L server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
 
 
@@ -86,7 +86,7 @@ RUN mkdir /config && touch /config/server.properties
 VOLUME ["/config", "/data/backup"]
 
 RUN mkdir -p /usr/local/bin
-ADD ./bin /usr/local/bin
+ADD ./server/Docker/bin /usr/local/bin
 RUN chmod +x /usr/local/bin/*.sh
 
 EXPOSE ${HARDWARE_MQTT_PORT} ${HARDWARE_MQTT_PORT_SSL} ${HTTP_PORT} ${HTTPS_PORT}
