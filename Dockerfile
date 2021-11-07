@@ -77,7 +77,7 @@ ENV ADMIN_PASS admin
 ############################################################
 
 RUN mkdir /blynk
-ADD /home/yaroslav/Docker/server-${BLYNK_SERVER_VERSION}.jar blynk
+ADD ./server/launcher/target/server-${BLYNK_SERVER_VERSION}.jar blynk
 #RUN curl -L server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
 
 
