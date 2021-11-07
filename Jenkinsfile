@@ -14,9 +14,7 @@ pipeline {
         stage ("Docker build") {
             steps {
                 echo "======== DOCKER BUILD ========"
-                sh "cp /var/lib/jenkins/workspace/Blynk-server/server/launcher/target/server-*.jar /home/yaroslav/Docker"
-                sh "cd /home/yaroslav/Docker"
-                sh "docker build -f /home/yaroslav/Docker/Dockerfile -t blynk-server ."
+                sh "docker build -t blynk-server ."
                 
             }
         }
