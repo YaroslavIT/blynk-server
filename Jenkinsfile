@@ -14,7 +14,7 @@ pipeline {
         stage ("Docker build") {
             steps {
                 echo "======== DOCKER BUILD ========"
-                sh "docker build -f ./server/Docker/Dockerfile -t blynk-server"
+                sh "docker build -f ./server/Docker/Dockerfile -t blynk-server ."
                 
             }
         }
