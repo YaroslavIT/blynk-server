@@ -76,7 +76,7 @@ RUN apt install -y curl
 ############################################################
 
 RUN mkdir /blynk
-ADD ./server/launcher/target/server-${BLYNK_SERVER_VERSION}.jar blynk
+ADD ./server/launcher/target/server-${BLYNK_SERVER_VERSION}.jar blynk/server.jar
 #RUN curl -L server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
 
 
