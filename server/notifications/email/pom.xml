@@ -38,7 +38,7 @@
         <dependency>
             <groupId>com.github.kenglxn.qrgen</groupId>
             <artifactId>javase</artifactId>
-            <version>${qrgen.version}</version>
+            <version>com.github.kenglxn.qrgen:javase:jar:3.0.1</version>
         </dependency>
 
         <dependency>
