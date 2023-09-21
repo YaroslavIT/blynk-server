@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'maven-3.8.2'
+        maven 'maven-3.9.4'
     }
     stages {
         stage ("Maven build") {
@@ -11,13 +11,13 @@ pipeline {
                 sh "mvn clean package -DskipTests"
             }
         }
-        stage ("Docker build") {
-            steps {
-                echo "======== DOCKER BUILD ========"
-                sh "docker build -f ./server/Docker/Dockerfile -t blynk-server ."
+        // stage ("Docker build") {
+        //     steps {
+        //         echo "======== DOCKER BUILD ========"
+        //         sh "docker build -f ./server/Docker/Dockerfile -t blynk-server ."
                 
-            }
-        }
+        //     }
+        // }
     } 
     
 
