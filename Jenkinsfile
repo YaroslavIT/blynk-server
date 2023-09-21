@@ -11,13 +11,13 @@ pipeline {
                 sh "mvn clean install -Dmaven.test.skip=true"
             }
         }
-        // stage ("Docker build") {
-        //     steps {
-        //         echo "======== DOCKER BUILD ========"
-        //         sh "docker build -f ./server/Docker/Dockerfile -t blynk-server ."
+        stage ("Docker build") {
+            steps {
+                echo "======== DOCKER BUILD ========"
+                sh "docker build -f ./server/Docker/Dockerfile -t blynk-server ."
                 
-        //     }
-        // }
+            }
+        }
     } 
     
 
