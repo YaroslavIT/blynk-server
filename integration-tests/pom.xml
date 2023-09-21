@@ -88,7 +88,7 @@
         <dependency>
             <groupId>com.github.kenglxn.qrgen</groupId>
             <artifactId>javase</artifactId>
-            <version>${qrgen.version}</version>
+            <version>3.0.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
