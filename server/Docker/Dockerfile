@@ -70,15 +70,14 @@ ENV ADMIN_PASS admin
 
 ############################################################
 # Install OpenJDK
-# RUN apt update 
-# && apt install -y openjdk-11-jdk libxrender1 maven
-# RUN apt install -y curl
+RUN apt update && apt install -y openjdk-11-jdk libxrender1 maven
+RUN apt install -y curl
 
 ############################################################
 
 RUN mkdir /blynk
 ADD ./server/launcher/target/server-${BLYNK_SERVER_VERSION}.jar blynk
-#RUN curl -L server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
+RUN curl -L server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
 
 
 RUN mkdir /data
